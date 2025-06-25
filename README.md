@@ -1,46 +1,213 @@
-# Getting Started with Create React App
+# Event Booking Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Фронтенд для системы бронирования мероприятий, разработанный на React с TypeScript.
 
-## Available Scripts
+## Описание проекта
 
-In the project directory, you can run:
+Система позволяет:
+- Регистрироваться и входить в систему
+- Просматривать список мероприятий с пагинацией
+- Бронировать билеты на мероприятия
+- Управлять своими бронированиями
+- Настраивать уведомления
+- Администраторам: управлять мероприятиями и бронированиями
 
-### `npm start`
+## Технологический стек
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **React 18** с TypeScript
+- **React Router** для навигации
+- **React Hook Form** с Yup для валидации форм
+- **Axios** для HTTP-запросов
+- **Tailwind CSS** для стилизации
+- **Lucide React** для иконок
+- **React Hot Toast** для уведомлений
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Быстрый старт
 
-### `npm test`
+### Предварительные требования
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js 16+ 
+- npm или yarn
 
-### `npm run build`
+### Установка зависимостей
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Запуск проекта
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Запуск с моками (демонстрация)
 
-### `npm run eject`
+По умолчанию проект запускается с моками для демонстрации функциональности:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Приложение будет доступно по адресу: http://localhost:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Тестовые аккаунты для демонстрации:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Обычный пользователь:**
+- Email: `user@example.com`
+- Пароль: `password123`
 
-## Learn More
+**Администратор:**
+- Email: `admin@example.com`
+- Пароль: `password123`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Запуск с реальным бэкендом
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Для подключения к реальному бэкенду создайте файл `.env` в корне проекта:
+
+```env
+REACT_APP_API_URL=http://localhost:8080
+REACT_APP_USE_MOCKS=false
+```
+
+Затем запустите приложение:
+
+```bash
+npm start
+```
+
+## Инструкции по запуску для разных ОС
+
+### Windows
+
+1. **Установка Node.js:**
+   - Скачайте Node.js с официального сайта: https://nodejs.org/
+   - Установите, следуя инструкциям установщика
+   - Проверьте установку: `node --version` и `npm --version`
+
+2. **Клонирование и запуск:**
+   ```cmd
+   git clone <repository-url>
+   cd event-booking-frontend
+   npm install
+   npm start
+   ```
+
+3. **Возможные проблемы:**
+   - Если возникают ошибки с правами доступа, запустите командную строку от имени администратора
+   - При проблемах с npm кэшем: `npm cache clean --force`
+
+### macOS
+
+1. **Установка Node.js:**
+   - Рекомендуется использовать Homebrew:
+     ```bash
+     brew install node
+     ```
+   - Или скачайте с официального сайта: https://nodejs.org/
+
+2. **Клонирование и запуск:**
+   ```bash
+   git clone <repository-url>
+   cd event-booking-frontend
+   npm install
+   npm start
+   ```
+
+3. **Возможные проблемы:**
+   - При проблемах с правами доступа: `sudo npm install`
+   - Если порт 3000 занят, npm автоматически предложит другой порт
+
+## Структура проекта
+
+```
+src/
+├── components/          # React компоненты
+│   ├── AuthForm.tsx     # Форма аутентификации
+│   ├── Navigation.tsx   # Навигация
+│   ├── EventList.tsx    # Список мероприятий
+│   ├── EventDetail.tsx  # Детали мероприятия
+│   ├── BookingList.tsx  # Список бронирований
+│   ├── AdminBookingList.tsx # Админ: управление бронированиями
+│   └── NotificationSettings.tsx # Настройки уведомлений
+├── contexts/            # React контексты
+│   └── AuthContext.tsx  # Контекст аутентификации
+├── services/            # API сервисы
+│   ├── api.ts          # Основной API сервис
+│   └── mockApi.ts      # Моки для демонстрации
+├── types/               # TypeScript типы
+│   └── index.ts        # Определения типов
+├── App.tsx             # Главный компонент
+└── index.tsx           # Точка входа
+```
+
+## API Endpoints
+
+### Аутентификация
+- `POST /auth/login` - Вход в систему
+- `POST /auth/register` - Регистрация
+
+### Мероприятия
+- `GET /events` - Список мероприятий
+- `GET /events/{id}` - Детали мероприятия
+- `POST /admin/events` - Создание мероприятия (Admin)
+- `PUT /admin/events/{id}` - Обновление мероприятия (Admin)
+- `DELETE /admin/events/{id}` - Удаление мероприятия (Admin)
+
+### Бронирования
+- `GET /bookings` - Мои бронирования
+- `POST /bookings` - Создание бронирования
+- `DELETE /bookings/{id}` - Отмена бронирования
+- `GET /admin/bookings` - Все бронирования (Admin)
+- `PUT /admin/bookings/{id}/confirm` - Подтверждение бронирования (Admin)
+- `DELETE /admin/bookings/{id}` - Удаление бронирования (Admin)
+
+### Уведомления
+- `GET /user/notifications` - Настройки уведомлений
+- `PUT /user/notifications` - Обновление настроек
+- `DELETE /user/notifications` - Сброс настроек
+- `POST /user/telegram/link` - Привязка Telegram
+
+## Переменные окружения
+
+| Переменная | Описание | По умолчанию |
+|------------|----------|--------------|
+| `REACT_APP_API_URL` | URL бэкенда | `http://localhost:8080` |
+| `REACT_APP_USE_MOCKS` | Использовать моки | `true` (если API_URL не задан) |
+
+## Сборка для продакшена
+
+```bash
+npm run build
+```
+
+Собранные файлы будут в папке `build/`.
+
+## Тестирование
+
+```bash
+npm test
+```
+
+## Дополнительные команды
+
+- `npm run eject` - Извлечение конфигурации (необратимо)
+- `npm run build` - Сборка для продакшена
+- `npm run test` - Запуск тестов
+- `npm run test:coverage` - Тесты с покрытием
+
+## Особенности демонстрационного режима
+
+При запуске с моками:
+- Все данные хранятся в памяти браузера
+- При перезагрузке страницы данные сбрасываются
+- Имитируются задержки API для реалистичности
+- Доступны предустановленные тестовые аккаунты
+
+## Поддержка
+
+При возникновении проблем:
+1. Проверьте версию Node.js (должна быть 16+)
+2. Удалите `node_modules` и `package-lock.json`, затем выполните `npm install`
+3. Очистите кэш npm: `npm cache clean --force`
+4. Убедитесь, что порт 3000 свободен
+
+## Лицензия
+
+MIT
