@@ -31,7 +31,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docker:mocks": "./scripts/start-docker-mocks.sh",
+    "docker:backend": "./scripts/start-docker-backend.sh",
+    "docker:stop": "./scripts/stop-docker.sh",
+    "docker:build": "docker-compose build",
+    "docker:logs": "docker-compose logs -f",
+    "start:mocks": "REACT_APP_USE_MOCKS=true npm start",
+    "start:backend": "REACT_APP_API_URL=http://localhost:8080 REACT_APP_USE_MOCKS=false npm start"
   },
   "eslintConfig": {
     "extends": [
