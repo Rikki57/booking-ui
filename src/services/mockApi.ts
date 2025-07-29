@@ -112,7 +112,7 @@ let mockBookings: Booking[] = [
   {
     id: 1,
     event: mockEvents[0],
-    user: mockUsers[0], // Иван Иванов
+    customerEmail: mockUsers[0].email, // Иван Иванов
     ticketCount: 2,
     confirmed: true,
     createdAt: '2024-02-15T10:00:00Z',
@@ -120,7 +120,7 @@ let mockBookings: Booking[] = [
   {
     id: 2,
     event: mockEvents[0],
-    user: mockUsers[2], // Мария Петрова
+    customerEmail: mockUsers[2].email, // Мария Петрова
     ticketCount: 1,
     confirmed: true,
     createdAt: '2024-02-16T14:30:00Z',
@@ -128,7 +128,7 @@ let mockBookings: Booking[] = [
   {
     id: 3,
     event: mockEvents[0],
-    user: mockUsers[3], // Алексей Сидоров
+    customerEmail: mockUsers[3].email, // Алексей Сидоров
     ticketCount: 3,
     confirmed: false,
     createdAt: '2024-02-17T09:15:00Z',
@@ -137,7 +137,7 @@ let mockBookings: Booking[] = [
   {
     id: 4,
     event: mockEvents[0],
-    user: mockUsers[4], // Елена Козлова
+    customerEmail: mockUsers[4].email, // Елена Козлова
     ticketCount: 1,
     confirmed: true,
     createdAt: '2024-02-18T16:45:00Z',
@@ -145,7 +145,7 @@ let mockBookings: Booking[] = [
   {
     id: 5,
     event: mockEvents[0],
-    user: mockUsers[5], // Дмитрий Волков
+    customerEmail: mockUsers[5].email, // Дмитрий Волков
     ticketCount: 2,
     confirmed: false,
     createdAt: '2024-02-19T11:20:00Z',
@@ -154,7 +154,7 @@ let mockBookings: Booking[] = [
   {
     id: 6,
     event: mockEvents[0],
-    user: mockUsers[6], // Анна Морозова
+    customerEmail: mockUsers[6].email, // Анна Морозова
     ticketCount: 1,
     confirmed: true,
     createdAt: '2024-02-20T13:10:00Z',
@@ -162,7 +162,7 @@ let mockBookings: Booking[] = [
   {
     id: 7,
     event: mockEvents[0],
-    user: mockUsers[7], // Сергей Новиков
+    customerEmail: mockUsers[7].email, // Сергей Новиков
     ticketCount: 4,
     confirmed: false,
     createdAt: '2024-02-21T08:30:00Z',
@@ -173,7 +173,7 @@ let mockBookings: Booking[] = [
   {
     id: 8,
     event: mockEvents[1],
-    user: mockUsers[0], // Иван Иванов
+    customerEmail: mockUsers[0].email, // Иван Иванов
     ticketCount: 1,
     confirmed: false,
     createdAt: '2024-02-20T14:00:00Z',
@@ -182,7 +182,7 @@ let mockBookings: Booking[] = [
   {
     id: 9,
     event: mockEvents[1],
-    user: mockUsers[2], // Мария Петрова
+    customerEmail: mockUsers[2].email, // Мария Петрова
     ticketCount: 2,
     confirmed: true,
     createdAt: '2024-02-21T10:30:00Z',
@@ -190,7 +190,7 @@ let mockBookings: Booking[] = [
   {
     id: 10,
     event: mockEvents[1],
-    user: mockUsers[3], // Алексей Сидоров
+    customerEmail: mockUsers[3].email, // Алексей Сидоров
     ticketCount: 1,
     confirmed: true,
     createdAt: '2024-02-22T15:45:00Z',
@@ -198,7 +198,7 @@ let mockBookings: Booking[] = [
   {
     id: 11,
     event: mockEvents[1],
-    user: mockUsers[4], // Елена Козлова
+    customerEmail: mockUsers[4].email, // Елена Козлова
     ticketCount: 3,
     confirmed: false,
     createdAt: '2024-02-23T12:20:00Z',
@@ -207,7 +207,7 @@ let mockBookings: Booking[] = [
   {
     id: 12,
     event: mockEvents[1],
-    user: mockUsers[5], // Дмитрий Волков
+    customerEmail: mockUsers[5].email, // Дмитрий Волков
     ticketCount: 1,
     confirmed: true,
     createdAt: '2024-02-24T09:15:00Z',
@@ -215,7 +215,7 @@ let mockBookings: Booking[] = [
   {
     id: 13,
     event: mockEvents[1],
-    user: mockUsers[6], // Анна Морозова
+    customerEmail: mockUsers[6].email, // Анна Морозова
     ticketCount: 2,
     confirmed: false,
     createdAt: '2024-02-25T16:30:00Z',
@@ -226,7 +226,7 @@ let mockBookings: Booking[] = [
   {
     id: 14,
     event: mockEvents[2],
-    user: mockUsers[0], // Иван Иванов
+    customerEmail: mockUsers[0].email, // Иван Иванов
     ticketCount: 5,
     confirmed: true,
     createdAt: '2024-02-10T10:00:00Z',
@@ -234,7 +234,7 @@ let mockBookings: Booking[] = [
   {
     id: 15,
     event: mockEvents[2],
-    user: mockUsers[2], // Мария Петрова
+    customerEmail: mockUsers[2].email, // Мария Петрова
     ticketCount: 3,
     confirmed: true,
     createdAt: '2024-02-11T14:30:00Z',
@@ -242,7 +242,7 @@ let mockBookings: Booking[] = [
   {
     id: 16,
     event: mockEvents[2],
-    user: mockUsers[3], // Алексей Сидоров
+    customerEmail: mockUsers[3].email, // Алексей Сидоров
     ticketCount: 4,
     confirmed: true,
     createdAt: '2024-02-12T09:15:00Z',
@@ -250,7 +250,7 @@ let mockBookings: Booking[] = [
   {
     id: 17,
     event: mockEvents[2],
-    user: mockUsers[4], // Елена Козлова
+    customerEmail: mockUsers[4].email, // Елена Козлова
     ticketCount: 2,
     confirmed: true,
     createdAt: '2024-02-13T16:45:00Z',
@@ -258,7 +258,7 @@ let mockBookings: Booking[] = [
   {
     id: 18,
     event: mockEvents[2],
-    user: mockUsers[5], // Дмитрий Волков
+    customerEmail: mockUsers[5].email, // Дмитрий Волков
     ticketCount: 6,
     confirmed: true,
     createdAt: '2024-02-14T11:20:00Z',
@@ -266,7 +266,7 @@ let mockBookings: Booking[] = [
   {
     id: 19,
     event: mockEvents[2],
-    user: mockUsers[6], // Анна Морозова
+    customerEmail: mockUsers[6].email, // Анна Морозова
     ticketCount: 3,
     confirmed: true,
     createdAt: '2024-02-15T13:10:00Z',
@@ -274,7 +274,7 @@ let mockBookings: Booking[] = [
   {
     id: 20,
     event: mockEvents[2],
-    user: mockUsers[7], // Сергей Новиков
+    customerEmail: mockUsers[7].email, // Сергей Новиков
     ticketCount: 7,
     confirmed: true,
     createdAt: '2024-02-16T08:30:00Z',
@@ -402,7 +402,7 @@ class MockApiService {
     await delay(300);
     // В реальном API здесь был бы фильтр по текущему пользователю
     // Для демо возвращаем бронирования пользователя user@example.com
-    return mockBookings.filter(b => b.user.email === 'user@example.com');
+    return mockBookings.filter(b => b.customerEmail === 'user@example.com');
   }
 
   async createBooking(data: CreateBookingRequest): Promise<Booking> {
@@ -423,7 +423,7 @@ class MockApiService {
     const newBooking: Booking = {
       id: Math.max(...mockBookings.map(b => b.id)) + 1,
       event,
-      user: mockUsers[0], // Иван Иванов (текущий пользователь)
+      customerEmail: mockUsers[0].email, // Иван Иванов (текущий пользователь)
       ticketCount: data.ticketCount,
       confirmed: false,
       createdAt: new Date().toISOString(),
