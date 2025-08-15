@@ -194,7 +194,7 @@ const AdminBookingList: React.FC = () => {
                         <div className="ml-4">
                           <div className="flex items-center">
                             <p className="text-sm font-medium text-gray-900">
-                              {booking.user.firstName} {booking.user.lastName}
+                              {booking.customerEmail}
                             </p>
                             <div className="ml-2">
                               {getStatusBadge(booking.confirmed)}

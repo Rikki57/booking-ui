@@ -19,7 +19,7 @@ export interface Event {
 export interface Booking {
   id: number;
   event: Event;
-  user: User;
+  customerEmail: string;
   ticketCount: number;
   confirmed: boolean;
   createdAt: string;
